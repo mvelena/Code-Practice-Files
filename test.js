@@ -39,6 +39,23 @@ const restaurant = {
   orderPasta: function ([ing1, ing2, ing3]) {
     console.log(`This is your pasta with ${ing1}, ${ing2}, and ${ing3}.`);
   },
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+  orderePizza: function (mainIng, ...otherIng) {
+    console.log(mainIng, otherIng);
+  },
 };
 restaurant.orderDilivery({
   time: "22:30",
@@ -51,16 +68,36 @@ restaurant.orderDilivery({
   mainI: 2,
   location: "Brentwood, TN",
 });
+//Spread operator
 const newMenu = [...restaurant.mainMenu, "Pelmeni"];
 newMenu[3][0] = "lalala";
 console.log(restaurant.mainMenu);
 console.log(newMenu);
 
-const myMenu = [...newMenu, ...restaurant.mainMenu];
-console.log(myMenu);
-const ingridience = [
-  prompt("Let's order passta. Ingridience 1:"),
-  prompt("Ingridience 2:"),
-  prompt("Ingridience 2:"),
+// const myMenu = [...newMenu, ...restaurant.mainMenu];
+// console.log(myMenu);
+// const ingridience = [
+//   prompt("Let's order passta. Ingridience 1:"),
+//   prompt("Ingridience 2:"),
+//   prompt("Ingridience 2:"),
+// ];
+// restaurant.orderPasta(ingridience);
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
 ];
-restaurant.orderPasta(ingridience);
+console.log(pizza, risotto, otherFood);
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+const add = function (...numbers) {
+  let sum = 0;
+  for (num of numbers) {
+    sum += num;
+  }
+  console.log(numbers, sum);
+};
+add(1, 2, 3);
+add(1, 2, 3, 4, 5);
+restaurant.orderePizza("mushroom", "onion", "ham");
+restaurant.orderePizza("chicken");
