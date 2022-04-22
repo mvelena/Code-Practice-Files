@@ -101,3 +101,11 @@ add(1, 2, 3);
 add(1, 2, 3, 4, 5);
 restaurant.orderePizza("mushroom", "onion", "ham");
 restaurant.orderePizza("chicken");
+
+//Short Circuiting (|| &&)
+restaurant.guestNum = 3;
+const guests1 = restaurant.guestNum ? restaurant.guestNum : 10;
+console.log(guests1);
+
+const guests2 = restaurant.guestNum || 10;
+console.log(guests2);
