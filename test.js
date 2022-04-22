@@ -104,7 +104,7 @@ restaurant.orderPizza("chicken");
 
 //Short Circuiting (|| &&)
 // || return first true value or last value
-restaurant.guestNum = 3;
+restaurant.guestNum = 0;
 const guests1 = restaurant.guestNum ? restaurant.guestNum : 10;
 console.log(guests1);
 
@@ -120,3 +120,6 @@ console.log(3 && "Elena" && null && []);
 // };
 
 restaurant.orderPizza && restaurant.orderPizza("onion", "ham");
+
+const guestsCorrect = restaurant.guestNum ?? 10;
+console.log(guestsCorrect);
