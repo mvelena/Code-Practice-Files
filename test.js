@@ -123,3 +123,28 @@ restaurant.orderPizza && restaurant.orderPizza("onion", "ham");
 
 const guestsCorrect = restaurant.guestNum ?? 10;
 console.log(guestsCorrect);
+
+//Logical Assignmebt Operator
+console.log("-------Logical Assignmebt Operator------------");
+const rest1 = {
+  name: "Buca",
+  guestsNum: 20,
+};
+const rest2 = {
+  name: "Best in Town",
+  owner: "Kate Smith",
+};
+
+// rest1.guestsNum = rest1.guestsNum || 10;
+// rest2.guestsNum = rest2.guestsNum || 10;
+
+rest1.guestsNum ??= 10;
+rest2.guestsNum ??= 10;
+console.log(rest1.guestsNum);
+console.log(rest2.guestsNum);
+
+//rest1.owner = rest1.owner && '<Anonymous>';
+rest1.owner &&= "<Anonymous>";
+rest2.owner &&= "<Anonymous>";
+console.log(rest1);
+console.log(rest2);
