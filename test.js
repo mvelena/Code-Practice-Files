@@ -53,7 +53,7 @@ const restaurant = {
       close: 24,
     },
   },
-  orderePizza: function (mainIng, ...otherIng) {
+  orderPizza: function (mainIng, ...otherIng) {
     console.log(mainIng, otherIng);
   },
 };
@@ -99,8 +99,8 @@ const add = function (...numbers) {
 };
 add(1, 2, 3);
 add(1, 2, 3, 4, 5);
-restaurant.orderePizza("mushroom", "onion", "ham");
-restaurant.orderePizza("chicken");
+restaurant.orderPizza("mushroom", "onion", "ham");
+restaurant.orderPizza("chicken");
 
 //Short Circuiting (|| &&)
 restaurant.guestNum = 3;
@@ -109,3 +109,12 @@ console.log(guests1);
 
 const guests2 = restaurant.guestNum || 10;
 console.log(guests2);
+
+console.log(3 && null);
+console.log(3 && "Elena");
+console.log(3 && "Elena" && null && []);
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza("onion", "ham")
+// };
+
+restaurant.orderPizza && restaurant.orderPizza("onion", "ham");
