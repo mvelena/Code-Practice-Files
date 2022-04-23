@@ -148,3 +148,15 @@ rest1.owner &&= "<Anonymous>";
 rest2.owner &&= "<Anonymous>";
 console.log(rest1);
 console.log(rest2);
+
+//Looping over Array
+const menu = [...restaurant.mainMenu];
+menu.push("Sweets");
+console.log(menu, restaurant.mainMenu);
+// for (const item of menu.entries()) {
+//   console.log(`${item[0] + 1}:${item[1]}`);
+// };
+
+for (const [num, item] of menu.entries()) {
+  console.log(`${num + 1}:${item}`);
+}
