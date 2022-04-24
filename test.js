@@ -39,20 +39,20 @@ const restaurant = {
   orderPasta: function ([ing1, ing2, ing3]) {
     console.log(`This is your pasta with ${ing1}, ${ing2}, and ${ing3}.`);
   },
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  // openingHours: {
+  //   thu: {
+  //     open: 12,
+  //     close: 22,
+  //   },
+  //   fri: {
+  //     open: 11,
+  //     close: 23,
+  //   },
+  //   sat: {
+  //     open: 0, // Open 24 hours
+  //     close: 24,
+  //   },
+  // },
   orderPizza: function (mainIng, ...otherIng) {
     console.log(mainIng, otherIng);
   },
@@ -160,3 +160,40 @@ console.log(menu, restaurant.mainMenu);
 for (const [num, item] of menu.entries()) {
   console.log(`${num + 1}:${item}`);
 }
+//Enhanced Object Literals
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+const openingHours = {
+  [days[3]]: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  [`day-${3 + 3}`]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const restaurantNew = {
+  name: "Classico Italiano",
+  location: "Via Angelo Tavanti 23, Firenze, Italy",
+  categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
+  starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
+  mainMenu: ["Pizza", "Pasta", "Risotto", [1, 2, 3]],
+  orderDilivery: function ({ starterI = 0, mainI, location, time = "20:00" }) {
+    console.log(
+      `Order received. Your order is ${this.mainMenu[mainI]} and ${this.starterMenu[starterI]} will be delived to ${location} at ${time}. `
+    );
+  },
+  openingHours,
+  // orderPasta: function ([ing1, ing2, ing3]) {
+  //   console.log(`This is your pasta with ${ing1}, ${ing2}, and ${ing3}.`);
+  orderPasta([ing1, ing2, ing3]) {
+    console.log(`This is your pasta with ${ing1}, ${ing2}, and ${ing3}.`);
+  },
+};
+restaurantNew.orderPasta(["cheese", "ham", "onion"]);
+console.log(restaurantNew.openingHours);
