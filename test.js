@@ -177,6 +177,21 @@ const openingHours = {
   },
 };
 
+const openHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const restaurantNew = {
   name: "Classico Italiano",
   location: "Via Angelo Tavanti 23, Firenze, Italy",
@@ -188,7 +203,8 @@ const restaurantNew = {
       `Order received. Your order is ${this.mainMenu[mainI]} and ${this.starterMenu[starterI]} will be delived to ${location} at ${time}. `
     );
   },
-  openingHours,
+  //openingHours,
+  openHours,
   // orderPasta: function ([ing1, ing2, ing3]) {
   //   console.log(`This is your pasta with ${ing1}, ${ing2}, and ${ing3}.`);
   orderPasta([ing1, ing2, ing3]) {
@@ -197,3 +213,11 @@ const restaurantNew = {
 };
 restaurantNew.orderPasta(["cheese", "ham", "onion"]);
 console.log(restaurantNew.openingHours);
+
+//Optional Chaining
+const daysArr = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+for (const day of daysArr) {
+  console.log(
+    `Restaurant opens ${restaurantNew.openHours[day]?.open ?? "closed"}`
+  );
+}
