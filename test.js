@@ -221,3 +221,28 @@ for (const day of daysArr) {
     `Restaurant opens ${restaurantNew.openHours[day]?.open ?? "closed"}`
   );
 }
+// const users = [{name:'Elena', email : 'Smith'}];
+// console.log(users[0]?.name ?? 'Array is empty');
+const users = [];
+console.log(users[0]?.name ?? "Array is empty");
+
+//Looping Objects
+//Property Name
+const daysOpen = Object.keys(openHours);
+let message = `We are open on ${daysOpen.length} days: `;
+for (const day of daysOpen) {
+  message += `${day} `;
+}
+console.log(message);
+
+//Property Values
+const time = Object.values(openHours);
+console.log(time);
+
+//Entire Object
+const entry = Object.entries(openHours);
+console.log(entry);
+
+for (const [key, { open, close }] of entry) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
