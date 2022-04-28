@@ -246,3 +246,30 @@ console.log(entry);
 for (const [key, { open, close }] of entry) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
+
+//Set
+console.log(new Set("Elena"));
+const mySet = new Set(["a", "b", "a", "c"]);
+console.log(mySet);
+const iceCream = [
+  "Vanila",
+  "Chocolate",
+  "Strawberry",
+  "Eskimo",
+  "Chocolate Chip",
+  "Butter Pecan",
+  "Eskimo",
+  "Chocolate",
+];
+const orderIcecream = {};
+console.log(new Set(iceCream).size);
+for (const item of iceCream) {
+  orderIcecream[item] ? (orderIcecream[item] += 1) : (orderIcecream[item] = 1);
+}
+console.log(orderIcecream);
+const orders = new Set(iceCream);
+console.log(orders.size);
+orders.add("Nuts");
+orders.delete("Vanila");
+console.log(orders.has("Vanila"));
+console.log(orders);
