@@ -192,6 +192,8 @@ const openHours = {
   },
 };
 
+console.log(openHours);
+
 const restaurantNew = {
   name: "Classico Italiano",
   location: "Via Angelo Tavanti 23, Firenze, Italy",
@@ -313,3 +315,17 @@ const questions = new Map([
   [false, "Try again"],
 ]);
 console.log(questions);
+
+//Convert object to Map
+// const hrMap = new Map(Object.entries(openHours));
+// console.log(hrMap);
+console.log(questions.get("question"));
+for (const [key, value] of questions) {
+  if (typeof key === "number") console.log(`Answer ${key}: ${value}`);
+}
+const answer = Number(prompt("Your answer"));
+console.log(questions.get(questions.get("answer") === answer));
+console.log(...questions);
+console.log(questions.entries());
+console.log(questions.keys());
+console.log(questions.values());
