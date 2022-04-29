@@ -329,3 +329,28 @@ console.log(...questions);
 console.log(questions.entries());
 console.log(questions.keys());
 console.log(questions.values());
+//Convert Map into Array
+console.log("---With Spread Operator-------");
+console.log(...questions.entries());
+console.log(...questions.keys());
+console.log(...questions.values());
+const keys = [...questions.keys()];
+console.log("key array:", keys);
+console.log([...questions.entries()]);
+
+const openHrs = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+console.log(Object.entries(openHrs));
