@@ -303,3 +303,13 @@ console.log(
 const arr = [1, 2, 3, 4, 5];
 rest.set(arr, "numbers");
 console.log(rest.get(arr));
+const questions = new Map([
+  ["question", "What is the most popular programming language?"],
+  [1, "Python"],
+  [2, "JavaScript"],
+  [3, "C++"],
+  ["answer", 1],
+  [true, "You are correct"],
+  [false, "Try again"],
+]);
+console.log(questions);
