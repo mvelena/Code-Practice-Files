@@ -251,6 +251,7 @@ for (const [key, { open, close }] of entry) {
 console.log(new Set("Elena"));
 const mySet = new Set(["a", "b", "a", "c"]);
 console.log(mySet);
+
 const iceCream = [
   "Vanila",
   "Chocolate",
@@ -273,3 +274,32 @@ orders.add("Nuts");
 orders.delete("Vanila");
 console.log(orders.has("Vanila"));
 console.log(orders);
+orders.clear();
+console.log(orders);
+
+//Map
+const rest = new Map();
+rest
+  .set(1, "test")
+  .set(true, "We are open")
+  .set(false, "we are close")
+  .set("open", 11)
+  .set("close", 22);
+console.log(rest);
+rest.get(true);
+console.log(rest.has(1));
+//rest.clear();
+console.log(rest.size);
+rest.delete(1);
+console.log(rest);
+let restTime = 21;
+console.log(
+  rest.get(restTime > rest.get("open") && restTime < rest.get("close"))
+);
+restTime = 10;
+console.log(
+  rest.get(restTime > rest.get("open") && restTime < rest.get("close"))
+);
+const arr = [1, 2, 3, 4, 5];
+rest.set(arr, "numbers");
+console.log(rest.get(arr));
