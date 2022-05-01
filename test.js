@@ -354,3 +354,25 @@ const openHrs = {
 };
 
 console.log(Object.entries(openHrs));
+//String
+const song = "Show must go on";
+console.log(song.indexOf("o"));
+console.log(song.lastIndexOf(" "));
+console.log(song.slice(0, song.indexOf(" ")));
+console.log(song.slice(song.lastIndexOf(" ")));
+console.log(song.slice(-2));
+console.log(song.slice(-2));
+console.log(song.slice(-2));
+const checkMiddleSeat = function (seat) {
+  //B, E missdle seat
+  if (seat.indexOf("B") != -1 || seat.indexOf("E") != -1) {
+    console.log(`${seat} is middle seat.`);
+  } else {
+    console.log(`${seat} is not middle seat.`);
+  }
+};
+checkMiddleSeat("11A");
+checkMiddleSeat("11B");
+checkMiddleSeat("11C");
+checkMiddleSeat("11D");
+checkMiddleSeat("11E");
