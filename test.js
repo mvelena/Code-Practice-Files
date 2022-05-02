@@ -376,3 +376,17 @@ checkMiddleSeat("11B");
 checkMiddleSeat("11C");
 checkMiddleSeat("11D");
 checkMiddleSeat("11E");
+//String methods
+
+const person = "saManthA";
+const correctPerson = person[0].toUpperCase() + person.slice(1).toLowerCase();
+console.log(correctPerson);
+const email = "  elena@gmail.com \n";
+console.log(email.trim());
+const sentence = "I love banana, I love singing";
+console.log(sentence.replace("love", "hate"));
+console.log(sentence.replace(/love/g, "hate"));
+console.log(sentence);
+const friendName = "natasha";
+friendName.toUpperCase();
+console.log(friendName);
