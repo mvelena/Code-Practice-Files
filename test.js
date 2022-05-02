@@ -390,3 +390,39 @@ console.log(sentence);
 const friendName = "natasha";
 friendName.toUpperCase();
 console.log(friendName);
+//Boolean
+friendName.includes("na");
+console.log("-------startsWith()--------");
+console.log(friendName.startsWith("na"));
+
+console.log("-------endsWith()--------");
+friendName.endsWith("Lo");
+
+const arrNew = sentence.split(" ");
+console.log(arrNew);
+const personName = "Mike Long big man";
+const [firstName, lastName] = personName.split(" ");
+console.log(firstName, lastName);
+const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
+console.log(newName);
+const passengerName = "luna ann smith davidson";
+const passengerArr = passengerName.split(" ");
+//let newpassengerName = "";
+// for (const name of passengerArr) {
+//   newpassengerName += name[0].toUpperCase() + name.slice(1) + " ";
+// };
+const list = [];
+for (const name of passengerArr) {
+  list.push(name[0].toUpperCase() + name.slice(1));
+}
+list.join(" ");
+console.log(list.join(" "));
+//Padding String
+const message = "Elena";
+console.log(message.padStart(25, "+").padEnd(40, "+"));
+
+const maskingNumber = function (numberCard) {
+  const str = numberCard + "";
+  console.log(str.slice(-4).padStart(str.length, "*"));
+};
+maskingNumber(123456781234);
