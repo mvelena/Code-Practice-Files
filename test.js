@@ -426,3 +426,8 @@ const maskingNumber = function (numberCard) {
   console.log(str.slice(-4).padStart(str.length, "*"));
 };
 maskingNumber(123456781234);
+//Repeat
+const message2 = "Bad weather....";
+console.log(message2.repeat(5));
+
+//Changing String
