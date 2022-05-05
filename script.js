@@ -27,11 +27,15 @@ button.addEventListener("click", function () {
   console.log(items);
   for (let item of items) {
     if (item != " ") {
-      items = item.trim().split("_");
-      items[1][0].toUpperCase();
-      item = items[0] + items[1][0].toUpperCase() + items[1].slice(1) + "\n";
-      console.log(item);
-      document.querySelector("textarea").value += item;
+      const [first, second] = item.trim().toLowerCase().split("_");
+      const output = `${first}${second[0].toUpperCase() + second.slice(1)}`;
+      //output.padEnd(20, "1");
+      document.querySelector("textarea").value += `${output.padEnd(20)}✔\n`;
+
+      //   items[1][0].toUpperCase();
+      //   item = items[0] + items[1][0].toUpperCase() + items[1].slice(1) + "\n";
+
+      //   document.querySelector("textarea").value += item;
     }
   }
 });
