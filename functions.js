@@ -29,3 +29,20 @@ checkPrint(undefined, 100);
 checkPrint(1, 100, 50);
 checkPrint(undefined, 100);
 checkPrint(3, 100, 0);
+
+//How Passing Arguments Works:Value vs.References
+const flight = "A3";
+let bag = 1;
+const elena = {
+  name: "Elena",
+  passport: 123245,
+};
+const checkIn = function (flightNum, passenger) {
+  bag += 1;
+  flightNum = "L4";
+  passenger.name = "Ms." + passenger.name;
+  console.log(passenger);
+};
+checkIn(flight, elena);
+console.log(flight);
+console.log(bag);
