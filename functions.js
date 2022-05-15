@@ -61,4 +61,21 @@ const transformer = function (str, fn) {
   console.log(`Transformed string : ${fn(str)}`);
   console.log(`Transformed by: ${fn.name}`);
 };
-transformer("JavaScript is the best!", upperFirstWord);
+//transformer("JavaScript is the best!", upperFirstWord);
+
+const upperLastWord = function (str) {
+  const arr = str.split(" ");
+  const lastWord = arr[arr.length - 1].toUpperCase();
+  console.log(lastWord);
+  console.log(arr);
+  arr.pop();
+  arr.join(" ") + lastWord;
+  // console.log(arr);
+  // //const newArr = arr.splice(-1, 1, lastWord);
+  // const newArr = arr.splice(1, 0, lastWord);
+  // console.log(arr.splice(1, 0, lastWord));
+  // //console.log(newArr);
+  return arr.join(" ") + " " + lastWord;
+};
+
+transformer("JavaScript is the best!", upperLastWord);
