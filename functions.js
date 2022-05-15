@@ -76,11 +76,22 @@ const transformer = function (str, fn) {
 const upperLastWord = function (str) {
   const arr = str.split(" ");
   const lastWord = arr.pop().toUpperCase();
-  console.log(lastWord);
-  console.log(arr);
   arr.push(lastWord);
-
   return arr.join(" ");
   // return arr.join(" ") + " " + lastWord;
 };
 transformer("JavaScript is the best!", upperLastWord);
+
+//Function that returns function
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}!`);
+  };
+};
+const greeterHey = greet("Hey");
+greeterHey("Elena");
+greet("Hellow")("Elena");
+
+const greetNew = (greeting) => (name) => console.log(`${greeting} ${name}`);
+
+greetNew("Hola")("Maria");
