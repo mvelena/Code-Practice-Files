@@ -46,3 +46,19 @@ const checkIn = function (flightNum, passenger) {
 checkIn(flight, elena);
 console.log(flight);
 console.log(bag);
+
+//Return Function Name
+console.log(`Function name is ${checkIn.name}.`);
+
+//Function accepting Callback Function
+const upperFirstWord = function (str) {
+  const [first, ...other] = str.split(" ");
+  return [first.toUpperCase(), ...other].join(" ");
+};
+
+const transformer = function (str, fn) {
+  console.log(`Original string : ${str}`);
+  console.log(`Transformed string : ${fn(str)}`);
+  console.log(`Transformed by: ${fn.name}`);
+};
+transformer("JavaScript is the best!", upperFirstWord);
