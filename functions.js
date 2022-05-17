@@ -124,6 +124,13 @@ const book = delta.book;
 book.call(eagle, 333, "Olya");
 console.log(eagle);
 
+//Apply method of function
 const flightDate = [44, "Ivan"];
 book.apply(eagle, flightDate);
+console.log(eagle);
+
+//Bind method of function
+
+const bookEG = book.bind(eagle);
+bookEG(99, "Irina");
 console.log(eagle);
