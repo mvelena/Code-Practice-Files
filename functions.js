@@ -95,3 +95,31 @@ greet("Hellow")("Elena");
 const greetNew = (greeting) => (name) => console.log(`${greeting} ${name}`);
 
 greetNew("Hola")("Maria");
+
+// The call and apply methods
+const delta = {
+  airline: "Delta",
+  code: "DL",
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.code}${flightNum}.`
+    );
+    this.bookings.push({ flight: `${this.code}${flightNum}`, name });
+  },
+};
+delta.book(123, "Elena");
+
+const eagle = {
+  airline: "Eagle",
+  code: "EG",
+  bookings: [],
+};
+//Does not work
+//eagle.book(987, "Maria");
+
+const book = delta.book;
+
+//Call method of function
+book.call(eagle, 333, "Olya");
+console.log(eagle);
