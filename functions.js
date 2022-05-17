@@ -123,3 +123,7 @@ const book = delta.book;
 //Call method of function
 book.call(eagle, 333, "Olya");
 console.log(eagle);
+
+const flightDate = [44, "Ivan"];
+book.apply(eagle, flightDate);
+console.log(eagle);
