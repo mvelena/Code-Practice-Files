@@ -130,7 +130,22 @@ book.apply(eagle, flightDate);
 console.log(eagle);
 
 //Bind method of function
-
 const bookEG = book.bind(eagle);
 bookEG(99, "Irina");
 console.log(eagle);
+
+const bookEG27 = book.bind(eagle, 27);
+bookEG27("Valya");
+console.log(eagle);
+
+//Object and eventListener
+eagle.planes = 300;
+eagle.buyPlane = function () {
+  console.log(`Number of planes before click ${this.planes}`);
+  this.planes++;
+  console.log(`Number of planes after click ${this.planes}`);
+  console.log(this);
+};
+document
+  .querySelector("button")
+  .addEventListener("click", eagle.buyPlane.bind(eagle));
