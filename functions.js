@@ -149,3 +149,17 @@ eagle.buyPlane = function () {
 document
   .querySelector("button")
   .addEventListener("click", eagle.buyPlane.bind(eagle));
+
+//Create new function with particular argument
+const addTax = (rate, value) => value + rate * value;
+const addVAT = addTax.bind(null, 0.23);
+//addVAT(100);
+console.log("Call function", addVAT(100));
+//Create the same function using using return function
+const addTax2 = function (rate) {
+  return function (value) {
+    console.log(rate * value + value);
+  };
+};
+const addVAT2 = addTax2(0.23);
+console.log(addVAT2(1000));
